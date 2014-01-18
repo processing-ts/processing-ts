@@ -2,7 +2,7 @@
 
 This project is an attempt to reproduce the [natureofcode.com](http://natureofcode.com/book/) examples in TypeScript.
 
-It's a very initial work in progress. The main drivers being to learn TypeScript, Processing and the concepts outlined in the Nature of Code book.
+It's a very initial work in progress. The main drivers being to learn TypeScript, Processing and the concepts outlined in the book.
 
 
 ### Setup
@@ -20,7 +20,7 @@ To compile only the core processing-ts files run:
 
 `grunt`
 
-To compile the core and examples files run:
+To compile the core and example files run:
 
 `grunt examples`
 
