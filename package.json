@@ -1,0 +1,10 @@
+{
+	"name": "processing-ts",
+	"version": "0.0.1",
+	"description": "TypeScript port of processing.",
+	"devDependencies": {
+		"grunt" : "0.4.1",
+        "grunt-ts": "~1.0.1",
+        "grunt-exec": "~0.4.2"
+	}
+}
