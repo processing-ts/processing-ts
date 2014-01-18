@@ -24,7 +24,7 @@ To compile the core and examples files run:
 
 `grunt examples`
 
-To compile and minify the natureofcode examples into a singel file run:
+To compile and minify the natureofcode examples into a single file run:
 
 `grunt natureofcode`
 

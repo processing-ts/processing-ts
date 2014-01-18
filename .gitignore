@@ -56,6 +56,7 @@ node_modules
 *.js.map
 *.min.map
 !Gruntfile.js
+!tools/r.js
 
 
 #################
