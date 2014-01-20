@@ -1,6 +1,6 @@
 # processing-ts
 
-[Demo](http://edsilv.github.io/processing-ts-examples/natureofcode/)
+**[Demo](http://edsilv.github.io/processing-ts-examples/natureofcode/)**
 
 This project is an attempt to reproduce the [natureofcode.com](http://natureofcode.com/book/) examples in TypeScript.
 
