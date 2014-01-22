@@ -1,6 +1,6 @@
 
 
-import colorUtils = require("./utils/Color");
+import colorUtils = require("./utils/color");
 
 export enum RectMode { CORNER, CORNERS, RADIUS, CENTER }
 export enum EllipseMode { CORNER, CORNERS, RADIUS, CENTER }
