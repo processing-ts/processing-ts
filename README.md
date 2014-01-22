@@ -43,3 +43,5 @@ and run:
 within the processing-ts directory, then browse to:
 
 `http://localhost:8080/examples/natureofcode/`
+
+[![Build Status](https://drone.io/github.com/edsilv/processing-ts/status.png)](https://drone.io/github.com/edsilv/processing-ts/latest)
