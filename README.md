@@ -1,6 +1,6 @@
 # processing-ts
 
-###[Demo](http://edsilv.github.io/processing-ts-examples/natureofcode/)
+###[Demo](http://processing-ts.github.io/processing-ts-examples/natureofcode/)
 
 This project is an attempt to reproduce the [natureofcode.com](http://natureofcode.com/book/) examples in TypeScript.
 
@@ -10,9 +10,7 @@ It's a very initial work in progress. The main drivers being to learn TypeScript
 
 1. Install [Node.js](http://nodejs.org), if you haven't already
 1. Install the Grunt command line interface (if you haven't already); on the command line, run `npm install -g grunt-cli`
-1. Clone the 'processing-ts' repository
-1. Run `git submodule init`
-1. Run `git submodule update`
+1. Clone the 'processing-ts' repository `git clone --recursive https://github.com/processing-ts/processing-ts.git`
 1. Run `npm install`
 
 ### Build
