@@ -10,7 +10,8 @@ It's a very initial work in progress. The main drivers being to learn TypeScript
 
 1. Install [Node.js](http://nodejs.org), if you haven't already
 1. Install the Grunt command line interface (if you haven't already); on the command line, run `npm install -g grunt-cli`
-1. Clone the 'processing-ts' repository `git clone --recursive https://github.com/processing-ts/processing-ts.git`
+1. Clone the 'processing-ts' repository and 'processing-ts-examples' module
+`git clone --recursive https://github.com/processing-ts/processing-ts.git`
 1. Run `npm install`
 
 ### Build
