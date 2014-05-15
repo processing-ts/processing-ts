@@ -1,1 +1,1 @@
-http-server -c-1 -p-8080
+http-server -c-1 -p-8080 & exit
