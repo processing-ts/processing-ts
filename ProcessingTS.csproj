@@ -30,6 +30,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="examples\js\require.d.ts" />
     <TypeScriptCompile Include="examples\natureofcode\forces\attraction.ts" />
     <TypeScriptCompile Include="examples\natureofcode\forces\attractionManyMovers.ts" />
     <TypeScriptCompile Include="examples\natureofcode\forces\attractor.ts" />
