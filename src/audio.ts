@@ -6,6 +6,7 @@ class SoundGen {
 
 
 
+
     constructor() {
         this.context = new AudioContext();
 
@@ -50,7 +51,27 @@ class SoundGen {
 
     }
 
+    playNote(options?: any){
 
+        //DEFAULTS
+        var newNote = {
+            pitch: 440,
+            envelope: [0, 1, 1, 0.4],
+            volume: 0.2
+        };
+
+        if (options.pitch) {
+            newNote.pitch = options.pitch;
+        }
+        if (options.envelope) {
+            newNote.envelope = options.envelope;
+        }
+        if (options.volume) {
+            newNote.volume = options.volume;
+        }
+        console.log(newNote);
+        return newNote;
+    }
 
 
 }
