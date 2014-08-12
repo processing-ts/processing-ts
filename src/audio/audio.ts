@@ -1,6 +1,6 @@
 
 
-class SoundGen {
+class Sound {
 
     context: AudioContext;
 
@@ -58,9 +58,46 @@ class SoundGen {
         }, (attack + sustain + decay + release)* 1500);
 
     }
-
-
-
 }
+export = Sound;
 
-export = SoundGen;
+//
+//
+//class Audio extends SoundGen{
+//
+//
+//    constructor() {
+//        var mySource;
+//
+//    }
+//
+//    playAudio(source) {
+//
+////        var thisSound = this;
+////        thisSound.source = source;
+////        buffer = null;
+////        thisSound.isLoaded = false;
+////        thisSound.panner = this.context.createPanner();
+////        thisSound.volume = this.context.createGain();
+//
+//        var getSound = new XMLHttpRequest();
+//        getSound.open("GET", source, true);
+//        getSound.responseType = "arraybuffer";
+//        getSound.addEventListener('load', this.bufferSound, false);
+//        getSound.send();
+//
+//
+//
+//
+//    }
+//
+//    bufferSound(event) {
+//        var request = event.target;
+//        var source = this.context.createBufferSource();
+//        source.buffer = this.context.createBuffer(request.response, false);
+//        this.mySource = source;
+//    }
+//
+//}
+//
+////export = Audio;
