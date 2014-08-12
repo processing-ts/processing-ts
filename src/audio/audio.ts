@@ -4,20 +4,93 @@ class Sound {
 
     context: AudioContext;
 
+    NewBlock = Object.create(null, {
+        connect: {
+            value: function (target) {
+                this.output.connect(target);
+            }
+        },
+        disconnect: {
+            value: function (target) {
+                this.output.disconnect(target);
+            }
+        }
+    });
+
+    /*
+
+    List of audio blocks:
+
+    SOURCE BLOCKS:
+        Oscillator
+            frequency
+            waveform
+            volume
+            output
+
+        White Noise
+            volume
+            output
+
+    MODIFIER BLOCKS
+        Modulator
+            Input
+            Frequency
+            Depth
+            waveform
+
+        Envelope
+            Input
+            Attack
+            Sustain
+            Decay
+            Release
+            Output
+
+        Filter
+            Input
+            Type
+            Frequency
+            Q
+            Gain
+            Output
+
+        Echo
+            Input
+            Gain
+            Feedback
+            Time
+            Output
+
+        Drive
+            Input
+            Drive
+            Output
+
+
+    PREFAB:
+        object which extends source and modifier attributes
+
+     */
+
 
     constructor() {
         this.context = new AudioContext();
 
     }
 
-    playNote(options?: any){
+
+
+    playSynth(options?: any){
+
 
         //DEFAULTS
         var defaultOptions = {
             frequency: 440,
-            oscType: 4,
+            oscType: "sine",
             envelope: [0, 0.5, 0, 0.1],
-            volume: 0.2
+            volume: 0.2,
+            output: this.context.destination
         };
 
         if (typeof options == 'object') {
@@ -34,7 +107,7 @@ class Sound {
         gainNode.gain.value = options.volume;
 
         oscillator.connect(gainNode);
-        gainNode.connect(this.context.destination);
+        gainNode.connect(options.output);
 
         //ASDR
         var attack = options.envelope[0],
@@ -54,50 +127,48 @@ class Sound {
 
         setTimeout(function() {
             oscillator.disconnect();
-            console.log('disconnect bleep');
         }, (attack + sustain + decay + release)* 1500);
 
+    }
+
+    Filter(options?: any){
+        //DEFAULTS
+        var defaultOptions = {
+            frequency: {
+                value: 800,
+                min: 20,
+                max: 22050,
+                modifiable: true
+            },
+            Q: {
+                value: 1,
+                min: 0.001,
+                max: 100,
+                modifiable: true
+            },
+            gain: {
+                value: 0,
+                min: -40,
+                max: 40,
+                modifiable: true
+            },
+            filterType: {
+                value: 1,
+                min: 0,
+                max: 7,
+                modifiable: false
+            },
+            output: this.context.destination
+        };
+
+        if (typeof options == 'object') {
+            options = $.extend(defaultOptions, options);
+        } else {
+            options = defaultOptions;
+        }
+
+        // CONFIG THE FILTER EFFECT HERE
     }
 }
 export = Sound;
 
-//
-//
-//class Audio extends SoundGen{
-//
-//
-//    constructor() {
-//        var mySource;
-//
-//    }
-//
-//    playAudio(source) {
-//
-////        var thisSound = this;
-////        thisSound.source = source;
-////        buffer = null;
-////        thisSound.isLoaded = false;
-////        thisSound.panner = this.context.createPanner();
-////        thisSound.volume = this.context.createGain();
-//
-//        var getSound = new XMLHttpRequest();
-//        getSound.open("GET", source, true);
-//        getSound.responseType = "arraybuffer";
-//        getSound.addEventListener('load', this.bufferSound, false);
-//        getSound.send();
-//
-//
-//
-//
-//    }
-//
-//    bufferSound(event) {
-//        var request = event.target;
-//        var source = this.context.createBufferSource();
-//        source.buffer = this.context.createBuffer(request.response, false);
-//        this.mySource = source;
-//    }
-//
-//}
-//
-////export = Audio;

@@ -11,6 +11,8 @@ class Sketch{
     container: HTMLElement;
 	startTime: number;
     time: number;
+    loop: any;
+
 
 	constructor() {
 
@@ -67,7 +69,8 @@ class Sketch{
         // start tick loop.
         frameCount = 0;
 
-        requestAnimationFrame((timestamp) => this.tick(timestamp));
+        this.loop = requestAnimationFrame((timestamp) => this.tick(timestamp));
+
 
         this.setup();
 	}
@@ -82,7 +85,7 @@ class Sketch{
         this.reset();
 		this.draw();
 
-        requestAnimationFrame((timestamp) => this.tick(timestamp));
+        this.loop = requestAnimationFrame((timestamp) => this.tick(timestamp));
     }
 
 	reset(): void{
@@ -100,6 +103,10 @@ class Sketch{
 
 		// todo: reset all other canvas styles?
 	}
+
+    destroy(): void {
+        cancelAnimationFrame(this.loop);
+    }
 
 	setup(): void {}
 	draw(): void {}
